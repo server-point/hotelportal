@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --lacquer:#0e2a26; --lacquer-2:#143832; --brass:#c19a5b; --brass-lt:#e0c48f; --ivory:#efe9dc;
-  --surface:#ffffff; --ink:#14201e; --line:#d9d3c5; --field:#f6f3ec;
+  --lacquer:#071b4a; --lacquer-2:#0b3b91; --brass:#f2a900; --brass-lt:#ffd34e; --ivory:#fff4d6;
+  --surface:#ffffff; --ink:#14203a; --line:#d9d3c5; --field:#f6f3ec;
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:"Jost","Segoe UI",system-ui,sans-serif;
   color-scheme:light dark;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--surface:#16231f;--ink:#efe9dc;--line:#2c3f39;--field:#0e1a17}
+  :root:not([data-theme="light"]){--surface:#101b35;--ink:#fff4d6;--line:#2c3d62;--field:#091329}
 }
-:root[data-theme="dark"]{--surface:#16231f;--ink:#efe9dc;--line:#2c3f39;--field:#0e1a17}
+:root[data-theme="dark"]{--surface:#101b35;--ink:#fff4d6;--line:#2c3d62;--field:#091329}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -33,7 +33,7 @@ body{background:var(--lacquer);font-family:var(--sans);color:var(--ivory);overfl
   transition:transform 1.3s cubic-bezier(.76,0,.24,1) .15s}
 .door.l{left:0;border-right:1px solid var(--brass)}
 .door.r{right:0;border-left:1px solid var(--brass)}
-.door::before{content:"";position:absolute;inset:7% 8%;border:1px solid rgba(193,154,91,.35)}
+.door::before{content:"";position:absolute;inset:7% 8%;border:1px solid rgba(242,169,0,.35)}
 .door::after{content:"";position:absolute;top:50%;width:6px;height:90px;border-radius:3px;
   background:linear-gradient(90deg,var(--brass-lt),var(--brass));transform:translateY(-50%)}
 .door.l::after{right:18px}.door.r::after{left:18px}
@@ -44,20 +44,20 @@ body{background:var(--lacquer);font-family:var(--sans);color:var(--ivory);overfl
 .plaque{position:fixed;z-index:30;left:50%;top:50%;transform:translate(-50%,-50%);
   width:min(360px,86vw);padding:34px 28px 28px;text-align:center;
   background:var(--lacquer);border:1px solid var(--brass);
-  box-shadow:0 0 0 6px var(--lacquer),0 0 0 7px rgba(193,154,91,.4);
+  box-shadow:0 0 0 6px var(--lacquer),0 0 0 7px rgba(242,169,0,.4);
   transition:opacity .5s ease,transform .5s ease}
 .opened .plaque{opacity:0;transform:translate(-50%,-50%) scale(.96);pointer-events:none}
 .mono{display:block;width:46px;height:46px;margin:0 auto 14px;border:1px solid var(--brass);border-radius:50%;
   font:600 24px/44px var(--serif);color:var(--brass-lt)}
 h1{font:600 30px/1.1 var(--serif);letter-spacing:.02em;color:var(--ivory)}
-.sub{margin-top:8px;font-size:13px;font-weight:300;color:rgba(239,233,220,.75)}
+.sub{margin-top:8px;font-size:13px;font-weight:300;color:rgba(255,244,214,.75)}
 .floors{display:flex;justify-content:center;gap:10px;margin:26px 0 14px}
-.floors i{width:26px;height:26px;border:1px solid rgba(193,154,91,.4);border-radius:50%;
-  font:500 12px/24px var(--sans);font-style:normal;color:rgba(239,233,220,.45);transition:all .35s}
+.floors i{width:26px;height:26px;border:1px solid rgba(242,169,0,.4);border-radius:50%;
+  font:500 12px/24px var(--sans);font-style:normal;color:rgba(255,244,214,.45);transition:all .35s}
 .floors i.on{background:var(--brass);border-color:var(--brass);color:var(--lacquer)}
-.bar{height:2px;background:rgba(193,154,91,.25)}
+.bar{height:2px;background:rgba(242,169,0,.25)}
 .bar b{display:block;height:100%;width:0;background:var(--brass);transition:width .4s ease}
-.status{margin-top:12px;font-size:13px;font-weight:300;min-height:20px;color:rgba(239,233,220,.8)}
+.status{margin-top:12px;font-size:13px;font-weight:300;min-height:20px;color:rgba(255,244,214,.8)}
 .status a{color:var(--brass-lt)}
 
 /* Settings */
@@ -75,7 +75,7 @@ h1{font:600 30px/1.1 var(--serif);letter-spacing:.02em;color:var(--ivory)}
 .panel input:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
 .row{display:flex;gap:8px}
 .btn{flex:1;padding:10px 12px;font:500 14px var(--sans);cursor:pointer;border-radius:4px;
-  border:1px solid var(--brass);background:var(--brass);color:#1b1608}
+  border:1px solid var(--brass);background:var(--brass);color:#071b4a}
 .btn.alt{background:transparent;color:var(--ink)}
 .btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .hint{margin-top:12px;font-size:12px;line-height:1.5;opacity:.75}
@@ -90,8 +90,8 @@ h1{font:600 30px/1.1 var(--serif);letter-spacing:.02em;color:var(--ivory)}
 <div class="door l"></div><div class="door r"></div>
 
 <div class="plaque" role="status" aria-live="polite">
-  <span class="mono" id="mono">G</span>
-  <h1 id="name">Grey Lodge Hotel</h1>
+  <span class="mono" id="mono">M</span>
+  <h1 id="name">Mbayom Hotel System</h1>
   <p class="sub">Preparing your stay</p>
   <div class="floors" aria-hidden="true"><i>L</i><i>1</i><i>2</i><i>3</i><i>4</i></div>
   <div class="bar"><b id="bar"></b></div>
@@ -103,8 +103,8 @@ h1{font:600 30px/1.1 var(--serif);letter-spacing:.02em;color:var(--ivory)}
   <label for="url">Portal URL</label>
   <input id="url" type="url" placeholder="https://script.google.com/macros/s/…/exec"
     value="https://script.google.com/macros/s/AKfycbxzvCPU6YI7jV3LEusZFWUg3ta42oP9fg6bgz9kif4pkkKF6uf4jSEHSFqOYYrYZRMitw/exec">
-  <label for="hname">Hotel name</label>
-  <input id="hname" type="text" value="Grey Lodge Hotel">
+  <label for="hname">Mbayom Hotel System</label>
+  <input id="hname" type="text" value="Mbayom Hotel System">
   <div class="row">
     <button class="btn" id="load">Load portal</button>
     <button class="btn alt" id="newtab">Open in new tab</button>
